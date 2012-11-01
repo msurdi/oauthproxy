@@ -1,7 +1,9 @@
 OAuthProxy
 =========
 Developed by Matias Surdi <matias.surdi@gmail.com>
+
 Licensed under the Apache 2.0 License.
+
 Disclaimer: Use at your own risk, I can't warranty this software has no security flaws. If in doubt, 
 get the source and ensure by yourself it meets your security requirements.
 
@@ -14,13 +16,6 @@ oauth authentication process is allowed, then it will proxy every ongoing reques
 session to a backend server. The process is totally transparent for the end user, except for the
 authentication step.
 
-Why oauthproxy?:
-  * I needed to authenticate users by email address to access a web application that had not any kind of registration/validation
-  * I didn't want to deal with all the hassle of setting up a VPN for every user.
-  * Couldn't find any existing tool with similar functionality that suited my needs.
-  * I wanted to get my hands dirty with [Go](http://golang.org) :-)
-  * I like the concept.
-
 Feel free to contact me if you need any help with getting it up and running, any suggestion to improve it, etc.
 
 Known alternatives
@@ -32,7 +27,7 @@ If You find any other alternative, feel free to suggest it for updating this doc
 
 Deployment
 ----------
-  1. Download the latest stable binary release from the [Downloads] section.
+  1. Download the latest stable binary release from the [Downloads](https://github.com/msurdi/oauthproxy/downloads) section.
   2. Uncompress and upload all the files to your server.
   3. Copy the provided _oauthproxy.conf.example_ to _oauthproxy.conf_ and adapt to your needs.
   4. If you enable HTTPS, replace the provided cert.pem and key.pem for the right ones for your domain
@@ -64,11 +59,13 @@ Current limitations
 
 F.A.Q.
 ------
-  1. Why Go?
+  1. Why [Go](http://golang.org)?
   Because I like it and I felt like this project was a good fit for it.
   
   2. Why OAuthProxy?
   Because sometimes setting up a VPN client on every company laptop is too much work. OAuthproxy
   won't be always the alternative of course, but for many cases it is a cheap and easy way to protect
-  intranet applications from outsiders without all the hassle of a VPN.
+  intranet applications from outsiders without all the hassle of a VPN. I also needed a good excuse
+  to get my hands dirty with Go.
 
+  
