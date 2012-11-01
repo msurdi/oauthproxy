@@ -60,9 +60,11 @@ Current limitations
 F.A.Q.
 ------
   1. Why [Go](http://golang.org)?
+
   Because I like it and I felt like this project was a good fit for it.
   
   2. Why OAuthProxy?
+  
   Because sometimes setting up a VPN client on every company laptop is too much work. OAuthproxy
   won't be always the alternative of course, but for many cases it is a cheap and easy way to protect
   intranet applications from outsiders without all the hassle of a VPN. I also needed a good excuse
