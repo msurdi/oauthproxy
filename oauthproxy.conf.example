@@ -1,0 +1,42 @@
+; Server process configuration
+[server]
+; Address to listen for incoming http requests. Leave empty to disable
+ListenAddress=localhost:80
+; Address to listen for incoming https requests. Leave empty to disable
+ListenAddressTLS=localhost:443
+; Url of backend server to handle http requests 
+ProxyURL=http://localhost:8080/
+; Cookie name for authenticated session tracking
+CookieName=oauth_session
+; Path to handle OAuth Callbacks
+CallbackPath=/oauth2callback
+; Root for authentication requirement
+ProtectPath=/
+; Path to SSL Certificate
+SSLCert=cert.pem
+; Path to SSL Key
+SSLKey=key.pem
+
+; Oauth provider settings
+; Currently tested only with google. See this document to obtain your ClientId, Secret, etc:
+; https://developers.google.com/accounts/docs/OAuth2#webserver
+[oauth]
+; Your ClientId, obtained from google API Console.
+ClientId=SomeLargeIdNumber
+; Your OAuth secret, obtained from google API Console.
+ClientSecret=SomeOtherRandomString
+; The request scope, leave as is for Google OAuth2 service
+Scope=https://www.googleapis.com/auth/userinfo.email
+; The url used for the initial OAuth request
+AuthURL=https://accounts.google.com/o/oauth2/auth
+; The url used for exchanging the OAuth code for an Access Token
+TokenURL=https://accounts.google.com/o/oauth2/token
+; The url Google should redirect the user after the authentication process completes
+; Ensure the Path matches the setting for the Server/CallbackPath setting in this file
+RedirectURL=http://www.example.com/oauth2callback
+; The api to request the user email address
+UserInfoAPI=https://www.googleapis.com/oauth2/v1/userinfo
+; Regular expression for determining if a user should be granted access
+; For example, to limit access to any user whose email belongs to the 
+; domain example.com, use: [A-Za-z0-9._%+-]+@example.com
+EmailRegexp=[A-Za-z0-9._%+-]+@(?:[A-Za-z0-9-]+\.)+[A-Za-z]{2,6}
