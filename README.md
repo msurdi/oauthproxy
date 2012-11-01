@@ -14,7 +14,21 @@ oauth authentication process is allowed, then it will proxy every ongoing reques
 session to a backend server. The process is totally transparent for the end user, except for the
 authentication step.
 
-Feel free to contact me if you need any help with getting it up and running.
+Why oauthproxy?:
+  * I needed to authenticate users by email address to access a web application that had not any kind of registration/validation
+  * I didn't want to deal with all the hassle of setting up a VPN for every user.
+  * Couldn't find any existing tool with similar functionality that suited my needs.
+  * I wanted to get my hands dirty with [Go](http://golang.org) :-)
+  * I like the concept.
+
+Feel free to contact me if you need any help with getting it up and running, any suggestion to improve it, etc.
+
+Known alternatives
+------------------
+The only similar alternative I've found to this is Apache's [mod_auth_openid](http://findingscience.com/mod_auth_openid/)
+module. But it is based on openid and not on OAuth as you have guessed.
+
+If You find any other alternative, feel free to suggest it for updating this document.
 
 Deployment
 ----------
