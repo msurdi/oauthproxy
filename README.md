@@ -4,8 +4,7 @@ Developed by Matias Surdi <matias.surdi@gmail.com>
 
 Licensed under the Apache 2.0 License.
 
-Disclaimer: Use at your own risk, I can't warranty this software has no security flaws. If in doubt, 
-get the source and ensure by yourself it meets your security requirements.
+Disclaimer: Use at your own risk, I can't warranty this software has no security flaws.
 
 
 Introduction
