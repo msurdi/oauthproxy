@@ -107,11 +107,15 @@ func oauthCallbackHandler(w http.ResponseWriter, r *http.Request) {
 	client := transport.Client()
 	response, err := client.Get(oauthProviderConfig.UserInfoAPI)
 	if err != nil {
-		log.Fatal(err)
+		log.Printf("Error while contacting '%s': %s\n", oauthProviderConfig.UserInfoAPI, err)
+		http.Error(w, http.StatusText(http.StatusBadRequest), http.StatusBadRequest)
+		return
 	}
 	body, err := ioutil.ReadAll(response.Body)
 	if err != nil {
-		log.Fatal(err)
+		log.Printf("Error while parsing response from '%s': %s\n", oauthProviderConfig.UserInfoAPI, err)
+		http.Error(w, http.StatusText(http.StatusBadGateway), http.StatusBadGateway)
+		return
 	}
 	response.Body.Close()
 	authorized, email := isAuthorized(body)
